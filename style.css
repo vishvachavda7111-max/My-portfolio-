@@ -1,0 +1,415 @@
+/* ================================
+   Vishva Chavda - Student Portfolio
+   Mobile-first responsive design
+   ================================ */
+
+:root {
+  --bg: #f7f8fc;
+  --surface: #ffffff;
+  --surface-soft: #eef2ff;
+  --text: #172033;
+  --muted: #64748b;
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --border: #e2e8f0;
+  --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --radius: 20px;
+  --max-width: 1120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(92%, var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 76px 0;
+}
+
+.section-alt {
+  background: var(--surface-soft);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface-soft);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 21px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+.nav-menu {
+  list-style: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  padding: 12px 4%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.nav-menu.open {
+  display: flex;
+}
+
+.nav-link {
+  display: block;
+  padding: 11px 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.hero {
+  min-height: calc(100vh - 68px);
+  display: grid;
+  align-items: center;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.12), transparent 30%),
+    var(--bg);
+}
+
+.hero-content {
+  display: grid;
+  gap: 42px;
+  align-items: center;
+}
+
+.hero-text {
+  order: 2;
+}
+
+.hero-image {
+  order: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 11vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  margin-bottom: 18px;
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+.hero-description {
+  color: var(--muted);
+  font-size: 1.03rem;
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 19px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.image-frame {
+  width: min(72vw, 300px);
+  aspect-ratio: 1;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.about-card,
+.career-card,
+.contact-card,
+.education-card,
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-card,
+.career-card,
+.contact-card {
+  padding: 28px;
+}
+
+.about-card p,
+.career-card p,
+.contact-card p {
+  color: var(--muted);
+}
+
+.education-card {
+  padding: 26px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.education-icon,
+.card-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--surface-soft);
+  font-size: 1.5rem;
+}
+
+.education-card h3,
+.info-card h3 {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.education-card p {
+  color: var(--muted);
+}
+
+.education-focus {
+  color: var(--primary) !important;
+  font-weight: 700;
+}
+
+.education-year {
+  display: inline-block;
+  margin-top: 9px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.info-card {
+  padding: 24px;
+}
+
+.info-card .card-icon {
+  margin-bottom: 18px;
+}
+
+.info-card p {
+  color: var(--muted);
+}
+
+.contact-card {
+  text-align: center;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--primary);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  padding: 26px 0;
+  background: #111827;
+  color: #cbd5e1;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  .section {
+    padding: 96px 0;
+  }
+
+  .hero-content {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-image {
+    order: 2;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-card,
+  .career-card {
+    padding: 36px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 0.92rem;
+  }
+
+  h1 {
+    max-width: 720px;
+  }
+
+  .hero-content {
+    gap: 70px;
+  }
+
+  .image-frame {
+    width: min(30vw, 360px);
+  }
+}
